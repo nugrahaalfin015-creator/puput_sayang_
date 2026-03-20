@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Hari Raya 💖</title>
+
+  <style>
+button {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #c2185b;
+  transform: scale(1.1);
+}
+
+#kejutanText {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #e91e63;
+  font-weight: bold;
+}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+
+      /* BACKGROUND ANIMASI */
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #ffc3a0);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+    #opening {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #ff4da6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 9999;
+  animation: fadeOut 3s ease forwards;
+}
+#opening {
+  text-shadow: 0 0 10px #ff4da6,
+               0 0 20px #ff4da6,
+               0 0 30px #ff4da6;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+      margin: 50px auto;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(5px);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    #text {
+      font-size: 16px;
+      color: #333;
+      white-space: pre-line;
+      min-height: 200px;
+    }
+
+    h2 {
+      color: #e91e63;
+    }
+
+    /* LOVE JATUH */
+    .love {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: jatuh linear forwards;
+    }
+
+    @keyframes jatuh {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="opening">I LOVE YOU PUPUT 💖</div>
+  
+
+  <div class="card">
+    <h2>💖 Selamat Hari Raya Idul Fitri 💖</h2>
+    <p><b>Untuk Puput 💖 dari Alfin</b></p>
+
+    <img src="https://i.ibb.co.com/Kj83bFmy/IMG-20260214-WA0026.jpg">
+
+    <p id="text"></p>
+    <button onclick="kejutan()">💖 Klik aku sayang</button>
+<p id="kejutanText"></p>
+
+    <audio controls autoplay loop>
+      <source src="https://appalling-plum-0imocqo5ns.edgeone.app/nadhif%20basalamah%20-%20penjaga%20hati%20(Official%20Music%20Video)%20-%20nadhif%20basalamah.mp3">
+    </audio>
+  </div>
+
+<script>
+  
+  
+const pesan = `Selamat Hari Raya Idul Fitri, sayang 🌙
+Mohon maaf lahir dan batin 🤍
+Terima kasih sudah jadi alasan aku tersenyum setiap hari 💖
+
+Di hari yang suci ini, aku minta maaf atas semua salahku 🙏
+Selamat Idul Fitri, cintaku 💕
+Semoga kita selalu bersama dalam kebaikan
+
+Mungkin aku belum sempurna untukmu
+Tapi perasaanku selalu tulus 💖
+Selamat Hari Raya Idul Fitri, maaf lahir dan batin ya, sayang 🌙
+
+Minal aidin wal faizin 😄
+Maaf ya kalau aku sering ngeselin 🙈
+Tapi percayalah, aku selalu sayang kamu ❤️
+
+Selamat Idul Fitri 🤍
+Maaf lahir batin ya, sayang 💖
+Aku selalu ada untuk kamu 🌙`;
+
+let i = 0;
+function ketik() {
+  if (i < pesan.length) {
+    document.getElementById("text").innerHTML += pesan.charAt(i);
+    i++;
+    setTimeout(ketik, 40);
+  }
+}
+ketik();
+
+/* LOVE JATUH */
+function buatLove() {
+  const love = document.createElement("div");
+  love.classList.add("love");
+  love.innerHTML = "💖";
+  love.style.left = Math.random() * 100 + "vw";
+  love.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(love);
+
+  setTimeout(() => {
+    love.remove();
+  }, 8000);
+}
+setInterval(buatLove, 300);
+</script>
+<script>
+function kejutan() {
+  document.getElementById("kejutanText").innerHTML =
+    "💌 Aku sayang kamu lebih dari kata-kata 💖✨";
+
+  // LEDAKAN LOVE
+  for (let i = 0; i < 80; i++) {
+    const love = document.createElement("div");
+    love.innerHTML = "💖";
+    love.style.position = "fixed";
+    love.style.left = "50%";
+    love.style.top = "50%";
+    love.style.fontSize = "20px";
+    love.style.pointerEvents = "none";
+
+    // arah acak
+    const x = (Math.random() - 0.5) * 400;
+    const y = (Math.random() - 0.5) * 400;
+
+    love.style.transition = "transform 1s ease-out, opacity 1s";
+    document.body.appendChild(love);
+
+    setTimeout(() => {
+      love.style.transform = `translate(${x}px, ${y}px) scale(2)`;
+      love.style.opacity = "0";
+    }, 10);
+
+    setTimeout(() => {
+      love.remove();
+    }, 1000);
+  }
+}
+</script>
+
+</body>
+</html>
